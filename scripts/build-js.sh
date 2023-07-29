@@ -122,9 +122,10 @@ uglifyjs \
 
 # copy out results
 mkdir ../dist
-mv dygraph.js dygraph.js.map dygraph.min.js dygraph.min.js.map tests.js ../dist/
+mv dygraph.js dygraph.js.map dygraph.min.js dygraph.min.js.map tests.js *.d.ts ../dist/
 mv es5 ../src-es5
 cd ..
+cp src/*.d.ts typescriptModels dist/
 rm -rf disttmp
 
 # minify CSS
@@ -133,5 +134,5 @@ cleancss css/dygraph.css -o dist/dygraph.min.css --source-map --source-map-inlin
 
 # add (ES5-compatible) extras to dist
 cd src-es5
-pax -rw -l extras ../dist/
+#pax -rw -l extras ../dist/
 cd ..

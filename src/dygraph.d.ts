@@ -1,36 +1,34 @@
 //Actual code
-/*
-All these imports will be added in time. For now though...
-
-import DygraphLayout from './dygraph-layout';
-import DygraphCanvasRenderer from './dygraph-canvas';
+//import DygraphLayout from './dygraph-layout';
+//import DygraphCanvasRenderer from './dygraph-canvas';
 import DygraphOptions from './dygraph-options';
-import DygraphInteraction from './dygraph-interaction-model';
-import * as DygraphTickers from './dygraph-tickers';
-import * as utils from './dygraph-utils';
-import DEFAULT_ATTRS from './dygraph-default-attrs';
-import OPTIONS_REFERENCE from './dygraph-options-reference';
-import IFrameTarp from './iframe-tarp';
+//import DygraphInteraction from './dygraph-interaction-model';
+//import * as DygraphTickers from './dygraph-tickers';
+//import * as utils from './dygraph-utils';
+//import DEFAULT_ATTRS from './dygraph-default-attrs';
+//import OPTIONS_REFERENCE from './dygraph-options-reference';
+//import IFrameTarp from './iframe-tarp';
 
-import DefaultHandler from './datahandler/default';
-import ErrorBarsHandler from './datahandler/bars-error';
-import CustomBarsHandler from './datahandler/bars-custom';
-import DefaultFractionHandler from './datahandler/default-fractions';
-import FractionsBarsHandler from './datahandler/bars-fractions';
-import BarsHandler from './datahandler/bars';
+//import DefaultHandler from './datahandler/default';
+//import ErrorBarsHandler from './datahandler/bars-error';
+//import CustomBarsHandler from './datahandler/bars-custom';
+//import DefaultFractionHandler from './datahandler/default-fractions';
+//import FractionsBarsHandler from './datahandler/bars-fractions';
+//import BarsHandler from './datahandler/bars';
 
-import AnnotationsPlugin from './plugins/annotations';
-import AxesPlugin from './plugins/axes';
-import ChartLabelsPlugin from './plugins/chart-labels';
-import GridPlugin from './plugins/grid';
-import LegendPlugin from './plugins/legend';
-import RangeSelectorPlugin from './plugins/range-selector';
+//import AnnotationsPlugin from './plugins/annotations';
+//import AxesPlugin from './plugins/axes';
+//import ChartLabelsPlugin from './plugins/chart-labels';
+//import GridPlugin from './plugins/grid';
+//import LegendPlugin from './plugins/legend';
+//import RangeSelectorPlugin from './plugins/range-selector';
 
-import GVizChart from './dygraph-gviz';
-*/
+//import GVizChart from './dygraph-gviz';
 //Type only
 import {DataFile} from "./typescriptModels/File"
 import {DygraphOpts} from "./typescriptModels/DygraphOpts"
+import {PluginDictionary} from "./typescriptModels/PluginDictionary"
+import {Plugin} from "./typescriptModels/Plugin"
 /**
  * @class Creates an interactive, zoomable chart.
  * @name Dygraph
@@ -64,6 +62,7 @@ export declare class Dygraph {
   static DEFAULT_HEIGHT: number
   static ANIMATION_STEPS: number
   static ANIMATION_DURATION: number
+  static PLUGINS: Array<Plugin>
   static Plotters: any //Plotters - not yet defined
   static addedAnnotationCss: boolean
   is_initial_draw: boolean
@@ -75,5 +74,15 @@ export declare class Dygraph {
   fractions_: boolean
   dateWindow_: any
   annotations_: Array<any>
-  
+  width_: number
+  height_: number
+  user_attrs: DygraphOpts
+  boundaryIds_: Array<any>
+  setIndexByName_: {}
+  datasetIndex_: Array<any>
+  registeredEvents_: Array<any> //Maybe an array of events?
+  eventListeners_: {}
+  attributes_: DygraphOptions
+  plugins_: Array<PluginDictionary>
+  createinterface_: () => void
 }
