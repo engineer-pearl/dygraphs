@@ -45,6 +45,9 @@ pax -rw -l auto_tests src disttmp/
 scripts/txt2js.sh LICENSE.txt disttmp/LICENCE.js
 header="/*! @license https://github.com/danvk/dygraphs/blob/v$relv/LICENSE.txt (MIT) */"
 
+# Run Typescript generation
+tsc
+
 # prepare for building; avoid bad relative paths
 cd disttmp
 if [[ -e node_modules ]]; then

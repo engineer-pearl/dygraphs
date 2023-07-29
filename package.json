@@ -4,12 +4,14 @@
   "description": "dygraphs is a fast, flexible open source JavaScript charting library.",
   "main": "index.es5",
   "module": "index",
+  "types": "index.d.ts",
   "jsnext:main": "index",
   "files": [
     "_site",
     "dist",
     "index.es5.js",
     "index.js",
+    "index.ts",
     "src",
     "src-es5"
   ],
