@@ -61,6 +61,7 @@
     "phantomjs-function-bind-polyfill": "^1.0.0",
     "pre-commit": "^1.0.6",
     "source-map": "^0.6.1",
+    "typescript": "^5.1.6",
     "uglify-js": "^3.17.3",
     "watchify": "^4.0.0"
   },
